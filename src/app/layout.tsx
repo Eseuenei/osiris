@@ -2,10 +2,10 @@ import type { Metadata, Viewport } from "next";
 import ErrorBoundary from '@/components/ErrorBoundary';
 import "./globals.css";
 
-const SITE_URL = "https://osirisai.live";
-const SITE_NAME = "OSIRIS";
-const SITE_TITLE = "OSIRIS — Open Source Intelligence Platform | Live Flight Tracking, CCTV, OSINT Tools & More";
-const SITE_DESCRIPTION = "The open-source Palantir alternative. Track live aircraft, satellites, and worldwide CCTV cameras on a 3D globe. Run Nmap scans, DNS lookups, WHOIS queries, SSL cert analysis & threat intelligence — all from your browser. 20+ data sources including live earthquake, wildfire, cyber threat and conflict feeds, plus mapped reference data such as nuclear facilities. Free & open source.";
+const SITE_URL = "https://osiris-lyart.vercel.app";
+const SITE_NAME = "ULS APEX";
+const SITE_TITLE = "ULS APEX - Global Intelligence Grid | Unusual Lab Studios LLC";
+const SITE_DESCRIPTION = "Real-Time Telemetry & Global Geospatial Intelligence Platform by Unusual Lab Studios LLC.";
 
 export const viewport: Viewport = {
   themeColor: "#D4AF37",
@@ -19,8 +19,8 @@ export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: {
     default: SITE_TITLE,
-    template: "%s | OSIRIS Intelligence",
-  },
+    template: "%s | ULS APEX Grid",
+
   description: SITE_DESCRIPTION,
   keywords: [
     // OSINT Tools - Primary focus
