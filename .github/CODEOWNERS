@@ -1,0 +1,9 @@
+# ULS APEX — Code Ownership
+# https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/about-code-owners
+
+*                  @Eseuenei
+src/app/           @Eseuenei
+src/components/    @Eseuenei
+src/lib/           @Eseuenei
+intel/             @Eseuenei
+engine/            @Eseuenei

@@ -1,287 +1,182 @@
-<div align="center">
+# ⚡ ULS APEX — Global Geospatial Intelligence Grid
 
-# ⬡ OSIRIS
+**Real-Time Telemetry & Global Geospatial Intelligence Platform by Unusual Lab Studios LLC**
 
-### Open Source Intelligence & Reconnaissance Integrated System
+ULS APEX is an open-source, feature-rich OSINT dashboard that aggregates real-time tracking data, threat intelligence, and global geospatial insights into one unified, interactive 3D globe interface.
 
-[![Live Demo](https://img.shields.io/badge/osirisai.live-00E5FF?style=for-the-badge&logo=vercel&logoColor=white)](https://osirislive.app)
-[![Support OSIRIS](https://img.shields.io/badge/Support_Project-Patreon-FF424D?style=for-the-badge&logo=patreon&logoColor=white)](https://www.patreon.com/posts/159077425)
-[![Next.js](https://img.shields.io/badge/Next.js-16-black?style=for-the-badge&logo=next.js)](https://nextjs.org)
-[![TypeScript](https://img.shields.io/badge/TypeScript-5-3178C6?style=for-the-badge&logo=typescript&logoColor=white)](https://typescriptlang.org)
-[![MapLibre](https://img.shields.io/badge/MapLibre_GL-GPU_Rendered-396CB2?style=for-the-badge)](https://maplibre.org)
-[![License](https://img.shields.io/badge/License-MIT-D4AF37?style=for-the-badge)](LICENSE)
+## 🎯 Key Features
 
-**A real-time global intelligence dashboard that aggregates live flight tracking, CCTV networks, earthquake monitoring, conflict zone mapping, and 24/7 news feeds into a single GPU-accelerated interface.**
+### 🛰️ Real-Time Tracking
+- **Aircraft** — 10,000+ commercial, private, military flights via ADS-B (adsb.lol)
+- **Satellites** — ISS, GPS, communication satellites (celestrak.org, n2yo.com)
+- **Maritime** — Live AIS vessel positions worldwide (aisstream.io, marinetraffic)
+- **CCTV Cameras** — 1000s of public security cameras (worldwide coverage)
 
-[Live Demo](https://osirisai.live) · [Report Bug](https://github.com/simplifaisoul/osiris/issues) · [Request Feature](https://github.com/simplifaisoul/osiris/issues) · [Join Discord](https://discord.gg/umBykEpb98)
+### 📡 Intelligence & Monitoring
+- **Earthquakes** — Real-time USGS seismic activity
+- **Wildfires** — NASA FIRMS active fire hotspots
+- **Weather** — Severe weather alerts & radar
+- **Cyber Threats** — CVE tracker, malware intel, attack origins (Cloudflare Radar)
+- **News & SIGINT** — RSS aggregation, Telegram OSINT channels
+- **Space Weather** — Solar storm & geomagnetic alerts
 
-</div>
+### 🔧 Reconnaissance Toolkit (RECON)
+- **Port Scanning** — Nmap from browser (no installation)
+- **DNS Lookup** — A, AAAA, MX, NS, TXT, CNAME records
+- **WHOIS Lookup** — Domain registration & owner data
+- **SSL/TLS Scan** — Certificate transparency & validation
+- **BGP & ASN** — Routing & autonomous system lookup
+- **IP Geolocation** — Threat intelligence & reputation
+- **Subdomain Enumeration** — Tech stack detection
+- **Crypto Wallet Analysis** — BTC/ETH/SOL forensics, OFAC screening
 
----
+### 🎨 Interface & Tools
+- **Interactive 3D Globe** — Rotate, zoom, day/night cycle
+- **Dual Projections** — 3D sphere or 2D Mercator map
+- **Region Dossier** — On-demand intelligence brief (right-click on map)
+- **Drawing & AOI** — Polygon selection, watch alerts for entity changes
+- **Custom Layers** — ArcGIS/GeoJSON import
+- **Flight Watch** — Track specific aircraft with telemetry
+- **Live News** — YouTube stream embedded viewer
+- **Navigation** — Real-time routing with turn-by-turn directions
+- **AI Analysis** — Google Gemini integration for threat briefing
 
-## Screenshots
+### 🎯 Keyboard Shortcuts
+- `L` — Toggle Layers panel
+- `M` — Toggle Markets
+- `C` — Toggle Supply Chain (SCM)
+- `I` — Toggle Intel Feed
+- `S` — Toggle Search
+- `R` — Reset map view
+- `G` — Toggle Globe/Flat projection
+- `F` — Fullscreen mode
+- `Ctrl+F` — Global search
 
-<p align="center">
-  <img src="docs/screenshots/taiwan-cctv.jpg" alt="OSIRIS over Taipei on the Night map, with live traffic-camera previews pinned across the city and the Longmen Building rooftop feed open" width="100%">
-  <br><sub><b>Taiwan</b> — Taipei's public traffic cameras streaming live on the Night map, one feed open full-size</sub>
-</p>
+## 🚀 Quick Start
 
-<p align="center">
-  <img src="docs/screenshots/seoul-live-cctv.jpg" alt="OSIRIS over Seoul in 3D terrain around Namsan Tower, with live CCTV previews and the Cheonggyecheon feed open" width="100%">
-  <br><sub><b>Seoul</b> — live CCTV in 3D terrain around Namsan Tower, with the Cheonggyecheon feed playing</sub>
-</p>
+### Prerequisites
+- Node.js 18+
+- npm or yarn
 
-<p align="center">
-  <img src="docs/screenshots/save-an-area.jpg" alt="A drawn area over mountain terrain in OSIRIS, with the live cameras inside it and the Drawing Tools panel showing the saved area" width="100%">
-  <br><sub><b>Save an Area</b> — draw a region and OSIRIS finds every camera inside it, ready to export as GeoJSON</sub>
-</p>
-
----
-
-## Overview
-
-Osiris is a production-grade OSINT platform that provides situational awareness across multiple intelligence domains. Built with Next.js 16 and MapLibre GL, every data point is rendered via WebGL for 60fps performance even with thousands of concurrent entities on-screen.
-
-### Key Capabilities
-
-| Domain | Data Points | Sources |
-|--------|------------|---------|
-| **Aviation** | Commercial, Private, Military, Jets | OpenSky Network |
-| **Maritime** | 39 Global Ports, 10 Chokepoints | Static Naval Intel |
-| **CCTV** | 17,000+ Cameras | TfL, WSDOT, Caltrans, ODOT, MDOT, HK Transport Dept, Taiwan THB, NZTA, Rijkswaterstaat, [Public Webcams](#acknowledgements) + more |
-| **Seismic** | Real-time M2.5+ | USGS Earthquake API |
-| **Fires** | Active Hotspots | NASA FIRMS |
-| **News** | 24/7 Live Streams | 23 Global Broadcasters |
-| **Weather** | Severe Events | NASA EONET |
-| **Space** | Solar Weather, Satellites | NOAA SWPC, N2YO |
-| **Cyber** | CVE Threats, Vulnerability Scanning | NVD, Custom Scanner |
-| **Conflict** | 13 Active Zones | Static OSINT Intel |
-| **Crypto** | BTC + ETH Wallet Tracing, OFAC SDN Match | blockstream.info, Blockscout, OpenSanctions |
-| **Sanctions** | Person / Org / Vessel SDN Search | OpenSanctions (US OFAC SDN mirror) |
-| **Telegram OSINT** | Geoparsed Posts from Public Channels | `t.me/s/<channel>` web preview |
-
----
-
-## Architecture
-
-```
-┌─────────────────────────────────────────────────┐
-│                  OSIRIS CLIENT                   │
-│  ┌──────────┐  ┌──────────┐  ┌───────────────┐ │
-│  │ MapLibre  │  │  HUD     │  │  RECON Toolkit│ │
-│  │  GL (GPU) │  │ Panels   │  │  Port Scan    │ │
-│  │  WebGL    │  │ Layers   │  │  DNS / WHOIS  │ │
-│  │  Render   │  │ Controls │  │  Vuln Scanner │ │
-│  └──────────┘  └──────────┘  └───────────────┘ │
-├─────────────────────────────────────────────────┤
-│               NEXT.JS API ROUTES                 │
-│  /api/flights         /api/earthquakes          │
-│  /api/cctv            /api/news                 │
-│  /api/fires           /api/maritime             │
-│  /api/gdelt           /api/satellites           │
-│  /api/weather         /api/scanner              │
-│  /api/sentinel        /api/telegram-feed        │
-│  /api/osint/*  (whois, dns, ip, cve, sanctions, │
-│                 crypto, sweep, threats, …)      │
-├─────────────────────────────────────────────────┤
-│              EXTERNAL DATA SOURCES               │
-│  OpenSky · USGS · NASA · NOAA · TfL · NVD      │
-│  GDACS · EONET · FIRMS · N2YO · RSS Feeds      │
-│  blockstream.info · Blockscout · OpenSanctions  │
-│  t.me public previews                            │
-└─────────────────────────────────────────────────┘
-```
-
----
-
-## Features
-
-### Intelligence Layers
-- **16 toggleable data layers** with real-time entity counts
-- **GPU-accelerated rendering** — all map data rendered via WebGL, not DOM
-- **Progressive loading** — data fetched on-demand when layers are activated
-- **Viewport-aware** — only loads relevant data for the visible region
-
-### Texas CCTV
-Public TxDOT ITS snapshots are integrated with the existing camera markers, preview grid and viewer. Use `/api/cctv?region=texas` for Texas only; global and Texas location queries include the same source. District inventories are cached independently, with stale data retained during outages. Availability varies by district and camera; these are refreshing JPEG snapshots, not video streams.
-
-Source: [TxDOT ITS](https://its.txdot.gov/its/District/DAL/cameras).
-
-Run `npm test` for offline checks or `RUN_LIVE_TESTS=1 npx vitest run src/app/api/cctv/texas.test.ts` to check the public Texas inventory.
-
-### RECON Toolkit
-- **Port Scanner** — TCP connect scan with service fingerprinting
-- **DNS Lookup** — Full record resolution (A, AAAA, MX, NS, TXT, CNAME)
-- **WHOIS** — Domain/IP registration data (auto-cross-checked against OFAC SDN)
-- **SSL/TLS Inspector** — Certificate chain analysis
-- **IP Intelligence** — Geolocation, ASN, threat reputation (auto-cross-checked against OFAC SDN)
-- **Vulnerability Scanner** — CVE lookup against NVD database
-- **Crypto Wallet Trace** — BTC + ETH lookup (balance, tx history, OFAC SDN sanctions flag)
-- **OFAC Sanctions Search** — query persons, organizations, vessels and aircraft against the US OFAC SDN list
-
-### Live Broadcast Network
-- **23 live 24/7 news streams** from global broadcasters
-- Click any news dot on the map to open the live stream
-- Feeds from NBC, CBS, ABC, Sky News, Al Jazeera, France 24, NHK, WION, and more
-
-### Telegram OSINT Layer
-- **Public-channel feed** scraped from the unauthenticated `t.me/s/<channel>` web preview — no Bot API token, no MTProto
-- Default curated set of 5 channels (EN + RU/UA war reporting), overridable via `OSIRIS_TELEGRAM_CHANNELS`
-- Posts are geoparsed against a multilingual place dictionary (EN + Cyrillic + Arabic) and plotted on the map
-- Click any cyan dot to read the post and jump to the original on Telegram
-
-### Crypto Wallet Intelligence
-- **BTC** lookups via [blockstream.info](https://blockstream.info) (Esplora API, keyless)
-- **ETH** lookups via [Blockscout](https://github.com/blockscout/blockscout)'s public ETH instance (`eth.blockscout.com`, keyless)
-- Every lookup is cross-checked against the OFAC SDN sanctioned-address list (mirrored from [`0xB10C/ofac-sanctioned-digital-currency-addresses`](https://github.com/0xB10C/ofac-sanctioned-digital-currency-addresses))
-- Sanctioned wallets surface a red **SANCTIONED — OFAC SDN** badge in the RECON panel
-
-### OFAC SDN Cross-Check
-- Standalone `SANCTIONS` tab in the RECON toolkit — full-text search across persons, organisations, vessels and aircraft
-- WHOIS and IP-intel routes auto-cross-check registrant / ASN-owner names against the SDN list and surface an inline alert
-- Data sourced from [OpenSanctions](https://www.opensanctions.org) (CC-BY 4.0) — keyless, ~7 MB cached in-memory for 24h
-
-### Conflict Zone Monitoring
-- **13 active conflict/tension zones** with severity-coded warning markers
-- Active Wars: Ukraine, Gaza, Sudan, Myanmar, DRC, Yemen
-- High Tension: Syria, Lebanon, Sahel, Somalia, Red Sea
-- Elevated: Taiwan Strait, Korean DMZ
-
-### Performance Optimized
-- **75% reduction in edge requests** vs initial release
-- Aggressive polling relaxation (15-30 min intervals for stable data)
-- Static data served from memory (zero external API calls for news feeds)
-- `layerFetchedRef` prevents duplicate API requests
-
----
-
-## Quick Start
-
+### Installation
 ```bash
-git clone https://github.com/simplifaisoul/osiris.git
+# Clone the repository
+git clone https://github.com/Eseuenei/osiris.git
 cd osiris
+
+# Install dependencies
 npm install
+
+# Copy environment template
+cp .env.example .env.local
+
+# Start development server
 npm run dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000)
+Open http://localhost:3000 in your browser.
 
-### Docker / Self-Hosting
-
+### Docker Deployment
 ```bash
-git clone https://github.com/simplifaisoul/osiris.git
-cd osiris
-cp .env.template .env     # optional — configure keys / port
-docker compose up -d
+# Build and run with Docker Compose
+docker-compose up -d
+
+# Or with just Docker
+docker build -t uls-apex .
+docker run -p 3000:3000 uls-apex
 ```
 
-Open [http://localhost:3000](http://localhost:3000). The image is a multi-stage
-`node:22-alpine` standalone build (~220 MB, non-root). The compose file also
-carries CasaOS app metadata (`x-casaos:`) for one-click install on
-[CasaOS](https://casaos.io). See **[DOCKER.md](DOCKER.md)** for the full Docker,
-CasaOS and API-key guide.
+See [DOCKER.md](./DOCKER.md) for full deployment instructions.
 
-**Prebuilt image (GHCR)** — skip the build and pull it directly:
+## 🔑 Environment Configuration
 
-```bash
-docker pull ghcr.io/simplifaisoul/osiris:latest
-docker run -d -p 3000:3000 --env-file .env ghcr.io/simplifaisoul/osiris:latest
+ULS APEX works **fully without any API keys** using public keyless feeds:
+- Aviation: adsb.lol, OpenSky (free with key for higher limits)
+- Satellites: celestrak.org, n2yo.com (free with key)
+- Maritime: aisstream.io (free with key)
+- Earthquakes: USGS (always free)
+- Fires: NASA FIRMS (always free)
+- Weather: Open-Meteo (always free)
+- News: RSS feeds (always free)
+
+**Optional keys for enhanced features:**
+- `SCANNER_URL` + `SCANNER_KEY` — Enable RECON scanner backend
+- `CLOUDFLARE_API_TOKEN` — Internet outages & attack origins layers
+- `GEMINI_API_KEY_1` — AI analysis features
+- `ETHERSCAN_API_KEY` — Enhanced Ethereum wallet forensics
+- `HELIUS_API_KEY` — Enhanced Solana wallet analysis
+
+See `.env.example` for all available options.
+
+## 📊 Technology Stack
+
+- **Frontend**: Next.js 16+, React 19, TypeScript, Tailwind CSS
+- **Mapping**: MapLibre GL, deck.gl, Framer Motion
+- **Charting**: Lightweight Charts, Recharts
+- **Data**: Socket.io, EventSource (SSE), WebSocket
+- **Deployment**: Docker, Vercel, self-hosted
+- **Analytics**: Umami (optional)
+
+## 🏗️ Project Structure
+
+```
+.
+├── src/
+│   ├── app/              # Next.js app directory (layouts, pages)
+│   ├── components/       # React components (panels, viewers, tools)
+│   ├── lib/              # Utilities (data fetching, transforms, map helpers)
+│   └── styles/           # Global CSS & Tailwind config
+├── public/               # Static assets (images, favicons, data)
+├── intel/                # RECON scanner backend (Express.js)
+├── engine/               # Advanced processing engines (optional)
+├── docs/                 # Documentation
+├── docker-compose.yml    # Multi-container deployment
+├── next.config.ts        # Next.js configuration
+└── tsconfig.json         # TypeScript configuration
 ```
 
-**Custom port** — the container always listens on `3000`; set `OSIRIS_PORT` in
-`.env` to change the published host port (e.g. `OSIRIS_PORT=3005`) without
-editing the compose file.
+## 🔒 Security
 
-### Environment Variables
+- **CSP Headers** — Restrictive Content Security Policy
+- **HSTS** — Strict-Transport-Security enabled
+- **Input Validation** — Client & server-side
+- **HTTPS Only** — Enforced in production
+- **No Credentials Storage** — Stateless design (except optional API keys)
 
-OSIRIS works **partially without any API keys** — all core feeds use public,
-keyless sources. Copy [`.env.template`](.env.template) to `.env` and set only
-what you need:
+See [SECURITY.md](./SECURITY.md) for detailed security guidelines.
 
-```env
-# Published host port (container always listens on 3000). Default: 3000
-OSIRIS_PORT=3000
+## 🤝 Contributing
 
-# RECON scanner backend (the only vars the current code reads).
-# SCANNER_KEY must match the backend's OSIRIS_KEY — generate with: openssl rand -hex 32
-SCANNER_URL=
-SCANNER_KEY=
+Contributions are welcome! Please:
 
-# Optional, for higher rate limits / future sources (see DOCKER.md for signup links)
-FIRMS_API_KEY=                # NASA FIRMS  — firms.modaps.eosdis.nasa.gov/api/map_key/
-OPENSKY_CLIENT_ID=            # OpenSky OAuth2 (since Mar 2025) — opensky-network.org
-OPENSKY_CLIENT_SECRET=
-N2YO_API_KEY=                 # N2YO satellites — n2yo.com (Profile → API key)
-AIS_API_KEY=                 # aisstream.io maritime
-```
+1. Fork the repository
+2. Create a feature branch (`git checkout -b feature/my-feature`)
+3. Commit changes (`git commit -m 'Add my feature'`)
+4. Push to branch (`git push origin feature/my-feature`)
+5. Open a Pull Request
 
-> Without `SCANNER_URL`/`SCANNER_KEY` the RECON toolkit returns `503`; every
-> other layer works out of the box. `.env` is gitignored — only the template is committed.
+## 📄 License
 
----
+MIT License — See [LICENSE](./LICENSE) for details.
 
-## Tech Stack
+## 🔗 Links
 
-| Layer | Technology |
-|-------|-----------|
-| Framework | Next.js 16 (App Router, Turbopack) |
-| Language | TypeScript 5 |
-| Map Engine | MapLibre GL JS (WebGL) |
-| Animations | Framer Motion |
-| Icons | Lucide React |
-| Styling | Custom CSS Design System |
-| Deployment | Vercel Edge Network |
+- **Live Demo**: [ulsapex.live](https://ulsapex.live)
+- **Documentation**: [docs/](./docs/)
+- **Issues**: [GitHub Issues](https://github.com/Eseuenei/osiris/issues)
+- **Discussions**: [GitHub Discussions](https://github.com/Eseuenei/osiris/discussions)
+
+## 🙏 Acknowledgments
+
+- **MapLibre GL** — Open-source mapping library
+- **Framer Motion** — Animation library
+- **OpenSky, ADS-B Exchange** — Aviation data
+- **NASA FIRMS** — Fire detection
+- **USGS** — Earthquake data
+- **Cloudflare Radar** — Internet intelligence
+- **GDELT Project** — Global event monitoring
 
 ---
 
-## Keyboard Shortcuts
-
-| Key | Action |
-|-----|--------|
-| `F` | Toggle flight layers |
-| `E` | Toggle earthquakes |
-| `S` | Toggle satellites |
-| `D` | Toggle day/night cycle |
-| `Escape` | Close panels |
-
----
-
-## Acknowledgements
-
-**Public webcams** — the cameras in this layer are open data: each one is broadcast
-publicly by whoever runs it, on their own site or their own channel. What the web
-lacked was a catalogue of them.
-
-[bekijkhet.nu](https://www.bekijkhet.nu/) is that catalogue, and it is the basis for
-every camera in the layer. Bram and Annelies have kept it by hand since 2012, and
-without their index these cameras would still be scattered across several hundred
-unrelated sites with no way to find them.
-
-OSIRIS links every one of them straight through to the operator who runs it, which is
-also how bekijkhet.nu asks to be read.
-
----
-
-## License
-
-MIT — see [LICENSE](LICENSE) for details.
-
----
-
-<div align="center">
-
-**🛠️ SUPPORT THE OSIRIS PROJECT**
-The OSIRIS Global Intelligence Grid is entirely open-source, but running the backend scanners and data firehoses isn't cheap.
-
-If you want to help keep the servers alive, and support us to get access to better tools  unlock the **Special OSIRIS Console**, Currently Just a Cool UI. a you can officially support the project here : 
-
-🔗 [Support OSIRIS on Patreon](https://www.patreon.com/posts/159077425)
-
-*Supporters receive the `🔴 RedTeam Console` role and access to encrypted developer comms.*
-
-
-**Built by [simplifaisoul](https://github.com/simplifaisoul)**
-
-[Join our Discord to be a part of this movement!](https://discord.gg/umBykEpb98)
-
-</div>
+**Built by Unusual Lab Studios LLC**  
+Real-Time Telemetry & Global Geospatial Intelligence Platform
