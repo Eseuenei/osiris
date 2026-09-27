@@ -8,7 +8,7 @@ const SITE_TITLE = "ULS APEX - Global Intelligence Grid | Unusual Lab Studios LL
 const SITE_DESCRIPTION = "Real-Time Telemetry & Global Geospatial Intelligence Platform by Unusual Lab Studios LLC.";
 
 export const viewport: Viewport = {
-  themeColor: "#D4AF37",
+  themeColor: "#00E5FF",
   width: "device-width",
   initialScale: 1,
   maximumScale: 5,
@@ -205,3 +205,4 @@ export default function RootLayout({
     </html>
   );
 }
+
